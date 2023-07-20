@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fv animation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lumanosimo:wght@400&display=swap" rel="stylesheet">
+    <style type="text/css">
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body, html {
+        width: 100%;
+        height: 100%;
+        font-family: 'Lumanosimo', cursive;
+      }
+      .fv {
+        position: relative;
+        width: 100%;
+        height: 100svh;
+        overflow: hidden;
+      }
+      .fv__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background-image: url("./bg.jpg");
+        background-size: 100%;
+        background-position: 0 center;
+      }
+      .fv__bg--animation {
+        animation: bgAnimation 50s infinite linear 1s;
+      }
+      @keyframes bgAnimation {
+        0% {
+          background-position-x: 0;
+        }
+        100% {
+          background-position-x: -3500px;
+        }
+      }
+      .fv__inner {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+      }
+      .fv__title {
+        font-weight: 900;
+        font-size: 100px;
+        color: white;
+        position: relative;
+      }
+      .fv__title span {
+        opacity: 0;
+        position: relative;
+      }
+      .fv__copy {
+        font-weight: 500;
+        font-size: 16px;
+        color: white;
+        margin-top: 100px;
+        width: 30vw;
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="fv">
+      <div class="fv__inner">
+        <h1 class="fv__title">
+          <span>N</span><span>O</span> <span>I</span><span>C</span><span>E</span>
+          <br>
+          <span>N</span><span>O</span> <span>L</span><span>I</span><span>F</span><span>E</span>
+        </h1>
+        <p class="fv__copy">Chocolate, Vanilla, Strawberry, Mint Chocolate Chip, Butter Pecan, Chocolate Chip Cookie Dough, Cookies n' Cream, Rocky Road, Coffee, Chocolate Chip, Pistachio, Neapolitan, Cake Batter, Salted Caramel, and more...♡</p>
+      </div>
+      <div class="fv__bg"></div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
