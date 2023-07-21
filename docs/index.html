@@ -18,6 +18,9 @@
         height: 100%;
         font-family: 'Noto Sans JP', sans-serif;
       }
+      ol, ul {
+        list-style: none;
+      }
       .container {
         width: 50%;
         position: relative;
@@ -27,14 +30,19 @@
       }
       .title {
         font-weight: 900;
-        font-size: 50px;
+        font-size: 60px;
       }
       .page {
         margin-top: 30px;
-        margin-left: 17px;
+        counter-increment: number;
       }
       .page__link {
         color: black;
+        font-weight: 500;
+        font-size: 18px;
+      }
+      .page__link::before {
+        content: counter(number) ". ";
         font-weight: 500;
         font-size: 18px;
       }
@@ -43,11 +51,11 @@
   <body>
     <div class="container">
       <h1 class="title">intera</h1>
-      <ul class="page">
+      <ol class="page">
         <li class="page__item">
           <a href="/intera/1/" class="page__link">fv animation</a>
         </li>
-      </ul>
+      </ol>
     </div>
   </body>
 </html>
