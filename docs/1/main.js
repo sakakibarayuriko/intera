@@ -12,7 +12,7 @@ const animation = () => {
           top: 0,
         },
         {
-          top: index % 2 ? Math.floor(Math.random() * 20) + 1 : -1 * Math.floor(Math.random() * 20) + 1,
+          top: index % 2 ? 5 : -5,
           opacity: 1,
           duration: 0.12,
           delay: index >= 5 ? index * 0.12 + 0.4 : index * 0.12,
@@ -30,7 +30,7 @@ const animation = () => {
       document.querySelector('.fv__bg').classList.add('fv__bg--animation');
     }
   },
-  '<2.6');
+  '<2.5');
 }
 
 animation();
